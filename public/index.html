@@ -15,7 +15,13 @@
   <body>
     <div style="text-align: center">
       <h1>Hi RS</h1>
-      <input type="text" id="message" placeholder="Message type chei" />
+      <!-- Add event listener for focus to clear the input value -->
+      <input
+        type="text"
+        id="message"
+        placeholder="Message type chei"
+        onfocus="clearInput()"
+      />
       <button id="sendBtn">Pampi</button>
 
       <div id="messages"></div>
@@ -31,7 +37,8 @@
       socket.on("message", (message) => {
         const p = document.createElement("p");
         p.innerText = message;
-        allMessages.appendChild(p);
+        // Prepend the new message to the list
+        allMessages.insertBefore(p, allMessages.firstChild);
       });
 
       sendBtn.addEventListener("click", (e) => {
@@ -39,6 +46,11 @@
         console.log(message);
         socket.emit("user-message", message);
       });
+
+      // Function to clear the input value
+      function clearInput() {
+        messageInput.value = "";
+      }
     </script>
   </body>
 </html>

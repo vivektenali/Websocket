@@ -22,4 +22,4 @@ app.get("/", (req, res) => {
   return res.sendFile("/public/index.html");
 });
 
-server.listen(PORT, () => console.log(`Server Started at PORT:9000`));
+server.listen(PORT, () => console.log(`Server Started`));
