@@ -7,24 +7,45 @@
     <title>Chat APP</title>
     <style>
       body {
-        background-color: #28282b;
-        color: white;
+        background-color: black;
+        color: #f8f8ff;
       }
     </style>
   </head>
   <body>
-    <div style="text-align: center">
-      <h1>Hi RS</h1>
+    <div>
+      <h1>RS Army</h1>
       <!-- Add event listener for focus to clear the input value -->
       <input
+        style="
+          padding: 10px;
+
+          border: 1px solid #fff;
+          border-radius: 5px;
+          background-color: #333;
+          color: #fff;
+        "
         type="text"
         id="message"
-        placeholder="Message type chei"
+        placeholder="Enter message"
         onfocus="clearInput()"
       />
-      <button id="sendBtn">Pampi</button>
+      <button
+        id="sendBtn"
+        style="
+          padding: 10px;
 
-      <div id="messages"></div>
+          border: 1px solid #fff;
+          border-radius: 5px;
+          background-color: #002387;
+          color: #fff;
+          cursor: pointer;
+        "
+      >
+        Send
+      </button>
+
+      <div id="messages" style="font-family: 'Segoe UI'"></div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
